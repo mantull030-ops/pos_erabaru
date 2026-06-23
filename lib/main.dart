@@ -6,6 +6,8 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:pos_app/constants/app_colors.dart';
 import 'package:pos_app/constants/supabase_constants.dart';
 import 'package:pos_app/providers/auth_provider.dart';
+import 'package:pos_app/providers/product_provider.dart';
+import 'package:pos_app/providers/cart_provider.dart';
 import 'package:pos_app/screens/auth/auth_wrapper.dart';
 
 void main() async {
@@ -25,6 +27,8 @@ void main() async {
     MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => AuthProvider()),
+        ChangeNotifierProvider(create: (_) => ProductProvider()),
+        ChangeNotifierProvider(create: (_) => CartProvider()),
       ],
       child: const PosApp(),
     ),

@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:pos_app/providers/auth_provider.dart';
 import 'package:pos_app/screens/dashboard/dashboard_screen.dart';
+import 'package:pos_app/screens/pos/pos_screen.dart';
+import 'package:pos_app/screens/product/product_list_screen.dart';
+import 'package:pos_app/screens/transaction/transaction_list_screen.dart';
+import 'package:pos_app/screens/settings/settings_screen.dart';
 
 class MainNavigation extends StatefulWidget {
   const MainNavigation({super.key});
@@ -13,13 +17,12 @@ class MainNavigation extends StatefulWidget {
 class _MainNavigationState extends State<MainNavigation> {
   int _selectedIndex = 0;
 
-  // Placeholder untuk halaman-halaman
   final List<Widget> _pages = [
     const DashboardScreen(),
-    const Center(child: Text('Kasir')),
-    const Center(child: Text('Produk')),
-    const Center(child: Text('Transaksi')),
-    const Center(child: Text('Pengaturan')),
+    const PosScreen(),
+    const ProductListScreen(),
+    const TransactionListScreen(),
+    const SettingsScreen(),
   ];
 
   final List<NavigationDestination> _destinations = const [
