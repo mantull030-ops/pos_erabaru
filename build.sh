@@ -4,7 +4,9 @@
 set -e
 
 echo "Downloading Flutter..."
-git clone https://github.com/flutter/flutter.git -b stable
+if [ ! -d "flutter" ]; then
+  git clone https://github.com/flutter/flutter.git -b stable
+fi
 
 echo "Adding Flutter to PATH..."
 export PATH="$PATH:`pwd`/flutter/bin"
