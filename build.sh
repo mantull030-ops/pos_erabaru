@@ -11,6 +11,9 @@ fi
 echo "Adding Flutter to PATH..."
 export PATH="$PATH:`pwd`/flutter/bin"
 
+echo "Running Flutter Doctor for diagnostics..."
+flutter doctor -v
+
 echo "Building Flutter Web..."
 flutter config --enable-web
 flutter build web --release
